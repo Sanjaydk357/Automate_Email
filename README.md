@@ -23,4 +23,4 @@ smtplib.SMTPAuthenticationError: (535, b'5.7.8 Username and Password not accepte
 
 1. Go to `https://myaccount.google.com/apppasswords`
 2. Sign in and set **App Name**.
-3. A 16-Digit code will be generated copy that and replace it with your original password (Remove spaces).
+3. A 16-Digit code will be generated copy that and replace it in `credentials.txt` instead of original password (Remove spaces).
