@@ -1,26 +1,45 @@
-# Automate_Email
+# 📧 Python Automated Email Sender with Attachments
 
-This project contains a simple python script which is used to sends the similar message to multiple recipient's.
+This Python script automates the process of sending personalized emails (with file attachments) using Gmail's SMTP server. It's perfect for small batch email campaigns, notifications, or simple mailing systems.
 
-## Dependencies
+## 🚀 Features
 
-This project requires only Python standard library
-(more specifically, the `csv`, `email`, and `smtplib` modules).
+- ✅ Secure login using credentials stored in a text file
+- ✅ Send emails to a list of recipients from a CSV file
+- ✅ Supports file attachments (PDF, images, documents, etc.)
+- ✅ Modular, readable code structure
+- ✅ Easily customizable subject and message body
 
-## Running the script
+## 📂 File Structure
 
-The script requires two configuration files
+├── credentials.txt # Contains your email and app password (one per line)
+├── emails.csv # CSV file with recipient email addresses
+├── sample.pdf # File to be attached (you can change this)
+├── email_sender.py # Main Python script
 
-* `emails.csv` should contain all the recipient's mail id.
-* `credentials.txt` should contain your login credentials such as E-mail id and Login Password.
-* Make sure `automate_email.py`, `emails.csv` and `credentials.txt` are in same folder.
 
-## Error !
-While running the script if you get any error like `Username and Password not accepted`.
+## 🔧 Setup Instructions
 
-`raise SMTPAuthenticationError(code, resp)
-smtplib.SMTPAuthenticationError: (535, b'5.7.8 Username and Password not accepted. For more information, go to\n5.7.8  https://support.google.com/mail/?p=BadCredentials d9443c01a7336-22ac7b62917sm114854365ad.11 - gsmtp')`
+1. **Install Python 3.6+** if not already installed.
+2. **Create a Gmail App Password** (required if you have 2FA enabled):
+   - Visit: https://myaccount.google.com/apppasswords
+   - Login to your account and provide an app name. (e.g., `automate_mail`)
+   - Copy the 16-digit code and store it in `credentials.txt` without **spaces**.
 
-1. Go to `https://myaccount.google.com/apppasswords`
-2. Sign in and set **App Name**.
-3. A 16-Digit code will be generated copy that and replace it in `credentials.txt` instead of original password (Remove spaces).
+3. **Prepare Required Files**:
+   - credentials.txt:
+     ```
+     your_email@gmail.com
+     your_app_password_here
+     ```
+   - emails.csv:
+     ```
+     recipient1@example.com
+     recipient2@example.com
+     ```
+
+   - Place the file you want to attach (e.g., `sample.pdf`) in the same directory.
+
+4. **Run the Script**:
+   ```bash
+   python automate_email.py
