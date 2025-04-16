@@ -12,15 +12,18 @@ This Python script automates the process of sending personalized emails (with fi
 
 ## 📂 File Structure
 
-├── credentials.txt # Contains your email and app password (one per line)
-├── emails.csv # CSV file with recipient email addresses
-├── sample.pdf # File to be attached (you can change this)
-├── email_sender.py # Main Python script
-
+```
+Automate_Email/
+├── email_sender.py
+├── credentials.txt
+├── emails.csv
+├── sample.pdf
+└── README.md
+```
 
 ## 🔧 Setup Instructions
 
-1. **Install Python 3.6+** if not already installed.
+1. **Install Python** if not already installed.
 2. **Create a Gmail App Password** (required if you have 2FA enabled):
    - Visit: https://myaccount.google.com/apppasswords
    - Login to your account and provide an app name. (e.g., `automate_mail`)
@@ -36,6 +39,7 @@ This Python script automates the process of sending personalized emails (with fi
      ```
      recipient1@example.com
      recipient2@example.com
+     recipient3@example.com
      ```
 
    - Place the file you want to attach (e.g., `sample.pdf`) in the same directory.
