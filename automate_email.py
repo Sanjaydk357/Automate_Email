@@ -6,15 +6,15 @@ import os
 
 def get_credentials(filepath):
     with open(filepath, "r") as f:
-        email_address = f.readline().strip()
-        email_pass = f.readline().strip()
-    return (email_address, email_pass)
+        email_id = f.readline().strip()
+        login_pass = f.readline().strip()
+    return (email_id, login_pass)
 
-def login(email_address, email_pass, s):
+def login(email_id, login_pass, s):
     s.ehlo()
     s.starttls()
     s.ehlo()
-    s.login(email_address, email_pass)
+    s.login(email_id, login_pass)
     print("Login successful")
 
 def attach_file(message, filepath):
@@ -35,8 +35,8 @@ def attach_file(message, filepath):
 
 def send_mail():
     s = smtplib.SMTP("smtp.gmail.com", 587)
-    email_address, email_pass = get_credentials("credentials.txt")
-    login(email_address, email_pass, s)
+    email_id, login_pass = get_credentials("credentials.txt")
+    login(email_id, login_pass, s)
 
     subject = "Welcome to Python" # Mention your subject here
     # Add your body of the email here
@@ -44,10 +44,10 @@ def send_mail():
             Hello welcome to python automated mailing system. 
         """
 
-    # CSV file should contain emails, one per row
+    # Reading email id from csv file
     with open("emails.csv", newline="") as csvfile:
-        spamreader = csv.reader(csvfile)
-        for row in spamreader:
+        id = csv.reader(csvfile)
+        for row in id:
             recipient = row[0].strip()
             if not recipient:
                 continue
@@ -55,11 +55,11 @@ def send_mail():
             message = EmailMessage()
             message.set_content(body)
             message['Subject'] = subject
-            message['From'] = email_address
+            message['From'] = email_id
             message['To'] = recipient
 
             # Add your attachment here
-            attach_file(message, "sample.pdf")  # change this to your file path
+            attach_file(message, "sample.pdf")  # change "sample.pdf" to your required file to be sent
 
             s.send_message(message)
             print("Email sent to ->", recipient)
