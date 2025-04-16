@@ -12,7 +12,7 @@ This project requires only Python standard library
 The script requires two configuration files
 
 * `emails.csv` should contain all the recipient's mail id.
-* `credentials.txt` should contain your login credentials such as Mais-id and Login Password.
+* `credentials.txt` should contain your login credentials such as E-mail id and Login Password.
 * Make sure `automate_email.py`, `emails.csv` and `credentials.txt` are in same folder.
 
 ## Error !
