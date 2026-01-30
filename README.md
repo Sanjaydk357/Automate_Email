@@ -32,8 +32,8 @@ Automate_Email/
 3. **Prepare Required Files**:
    - credentials.txt:
      ```
-     your_email@gmail.com
-     your_app_password_here
+     Enter_your_email@gmail.com
+     Enter_your_app_password_here
      ```
    - emails.csv:
      ```
